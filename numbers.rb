@@ -1,3 +1,5 @@
+# Question 1
+
 # Consider the following algorithm to generate a sequence of numbers. Start with an integer n. If n is even, divide by 2. If n is odd, multiply by 3 and add 1. Repeat this process with the new value of n, terminating when n = 1. For example, the following sequence of numbers will be generated for n = 22:
 #
 #
@@ -30,7 +32,7 @@
 # 100 200 125
 # 201 210 89
 # 900 1000 174 (edited)
-################
+#
 
 class Exercise
 	attr_accessor :args
@@ -48,4 +50,15 @@ class Exercise
 	end
 end
 
+
+# Accessor and initilization need refining
+# Need to first set a loop
+# Need to map this to another array
+# Then need to pop or call on last added int to array to run through algy
+
+
 puts Exercise.new(22)
+
+
+
+#####################################
