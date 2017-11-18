@@ -34,21 +34,37 @@
 # 900 1000 174 (edited)
 #
 
-class Exercise
-	attr_accessor :args
-
-	def initialize(algy)
-	end
-
-	def algy(*args)
-		print args
-		if n%2 == 0
-			print (n/2)
-		else
-			print ((n*3) + 1)
-		end
-	end
+# the next number in the sequence
+def next_number num
+  num.even? ? num /= 2 : 3*num + 1
 end
+
+# the sequence for a number
+def sequence num, nums = []
+  nums << num
+  return nums if num == 1
+
+  # recursion
+  sequence next_number(num), nums
+end
+
+# the sequence length for a number
+def sequence_length num
+  sequence(num).size
+end
+
+# the max sequence length for all numbers between
+# a start and an end
+#
+# output: "start end max_sequence_length"
+def max_sequence_length start_num, end_num
+  max = (start_num..end_num).map do |num|
+    sequence_length num
+  end.max
+  "#{start_num} #{end_num} #{max}"
+end
+
+p max_sequence_length(900, 1000)
 
 
 # Accessor and initilization need refining
@@ -57,7 +73,6 @@ end
 # Then need to pop or call on last added int to array to run through algy
 
 
-puts Exercise.new(22)
 
 
 
